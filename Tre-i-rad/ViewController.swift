@@ -150,9 +150,26 @@ class ViewController: UIViewController {
             && number6.isUserInteractionEnabled == false
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
-            && number9.isUserInteractionEnabled == false {
+            && number9.isUserInteractionEnabled == false
+            && circlePlayerText.text == "(O) Your turn" {
             
             nextRoundButton.isHidden = false
+            nextRoundButton.setTitle("Stalemate!", for: .normal)
+        }
+        if
+            number1.isUserInteractionEnabled == false
+            && number2.isUserInteractionEnabled == false
+            && number3.isUserInteractionEnabled == false
+            && number4.isUserInteractionEnabled == false
+            && number5.isUserInteractionEnabled == false
+            && number6.isUserInteractionEnabled == false
+            && number7.isUserInteractionEnabled == false
+            && number8.isUserInteractionEnabled == false
+            && number9.isUserInteractionEnabled == false
+            && xPlayerText.text == "(X) Your turn" {
+            
+            nextRoundButton.isHidden = false
+            nextRoundButton.setTitle("Stalemate!", for: .normal)
         }
         //shows the next round button and locks the playing field until next round
         if xPlayerText.text == "(X) You win!" || circlePlayerText.text == "(O) You win!" {
