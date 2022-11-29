@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         
         
     }
+    //function that checks for a win and gives points
     func checkWin() {
         if number1.image == UIImage(named:"black_circle") && number2.image == UIImage(named:"black_circle") && number3.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
@@ -138,6 +139,22 @@ class ViewController: UIViewController {
         }
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
+        
+        //for stalemates
+        if
+            number1.isUserInteractionEnabled == false
+            && number2.isUserInteractionEnabled == false
+            && number3.isUserInteractionEnabled == false
+            && number4.isUserInteractionEnabled == false
+            && number5.isUserInteractionEnabled == false
+            && number6.isUserInteractionEnabled == false
+            && number7.isUserInteractionEnabled == false
+            && number8.isUserInteractionEnabled == false
+            && number9.isUserInteractionEnabled == false {
+            
+            nextRoundButton.isHidden = false
+        }
+        //shows the next round button and locks the playing field until next round
         if xPlayerText.text == "(X) You win!" || circlePlayerText.text == "(O) You win!" {
             nextRoundButton.isHidden = false
             number1.isUserInteractionEnabled = false
@@ -151,6 +168,7 @@ class ViewController: UIViewController {
             number9.isUserInteractionEnabled = false
         }
     }
+    //separate gesture functions for all the available moves
     @IBAction func pressT(_ sender: UITapGestureRecognizer) {
     turnCounter += 1
         if turnCounter % 2 == 0 {
@@ -295,6 +313,7 @@ class ViewController: UIViewController {
             checkWin()
         }
     }
+    //the function that resets the round
     @IBAction func nextRoundAction(_ sender: UIButton) {
         number1.image = UIImage(named:"")
         number2.image = UIImage(named:"")
