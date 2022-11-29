@@ -22,7 +22,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var circlePlayerText: UILabel!
     @IBOutlet weak var xPlayerText: UILabel!
     
+    
+    @IBOutlet weak var nextRoundButton: UIButton!
+
+    
+    @IBOutlet weak var xwinCounter: UILabel!
+    @IBOutlet weak var circleWinCounter: UILabel!
+    
     var turnCounter : Int = 2
+    var winCounterCircle : Int = 0
+    var winCounterX : Int = 0
     
     
     override func viewDidLoad() {
@@ -41,63 +50,105 @@ class ViewController: UIViewController {
         //start
         xPlayerText.text = "(X) Your turn"
         
+        xwinCounter.text = String(winCounterX)
+        circleWinCounter.text = String(winCounterCircle)
+        
+        
     }
     func checkWin() {
         if number1.image == UIImage(named:"black_circle") && number2.image == UIImage(named:"black_circle") && number3.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number1.image == UIImage(named:"black_circle") && number4.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number1.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number2.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number3.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number4.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number7.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
             circlePlayerText.text = "(O) You win!"
             xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
+        }
+        if number3.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number7.image == UIImage(named:"black_circle") {
+            circlePlayerText.text = "(O) You win!"
+            xPlayerText.text = "(X) You lost!"
+            winCounterCircle += 1
         }
         if number1.image == UIImage(named:"black_x") && number2.image == UIImage(named:"black_x") && number3.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number1.image == UIImage(named:"black_x") && number4.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number1.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number2.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number3.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number4.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
         }
         if number7.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
             xPlayerText.text = "(X) You win!"
             circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
+        }
+        if number3.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number7.image == UIImage(named:"black_x") {
+            xPlayerText.text = "(X) You win!"
+            circlePlayerText.text = "(O) You lost!"
+            winCounterX += 1
+        }
+        xwinCounter.text = String(winCounterX)
+        circleWinCounter.text = String(winCounterCircle)
+        if xPlayerText.text == "(X) You win!" || circlePlayerText.text == "(O) You win!" {
+            nextRoundButton.isHidden = false
+            number1.isUserInteractionEnabled = false
+            number2.isUserInteractionEnabled = false
+            number3.isUserInteractionEnabled = false
+            number4.isUserInteractionEnabled = false
+            number5.isUserInteractionEnabled = false
+            number6.isUserInteractionEnabled = false
+            number7.isUserInteractionEnabled = false
+            number8.isUserInteractionEnabled = false
+            number9.isUserInteractionEnabled = false
         }
     }
     @IBAction func pressT(_ sender: UITapGestureRecognizer) {
@@ -243,5 +294,26 @@ class ViewController: UIViewController {
             xPlayerText.text = ""
             checkWin()
         }
+    }
+    @IBAction func nextRoundAction(_ sender: UIButton) {
+        number1.image = UIImage(named:"")
+        number2.image = UIImage(named:"")
+        number3.image = UIImage(named:"")
+        number4.image = UIImage(named:"")
+        number5.image = UIImage(named:"")
+        number6.image = UIImage(named:"")
+        number7.image = UIImage(named:"")
+        number8.image = UIImage(named:"")
+        number9.image = UIImage(named:"")
+        nextRoundButton.isHidden = true
+        number1.isUserInteractionEnabled = true
+        number2.isUserInteractionEnabled = true
+        number3.isUserInteractionEnabled = true
+        number4.isUserInteractionEnabled = true
+        number5.isUserInteractionEnabled = true
+        number6.isUserInteractionEnabled = true
+        number7.isUserInteractionEnabled = true
+        number8.isUserInteractionEnabled = true
+        number9.isUserInteractionEnabled = true
     }
 }
