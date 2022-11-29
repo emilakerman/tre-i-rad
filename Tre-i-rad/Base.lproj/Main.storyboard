@@ -74,6 +74,18 @@
                                     <outletCollection property="gestureRecognizers" destination="iDe-nq-CsW" appends="YES" id="zhH-Be-auM"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0C-OY-jSf">
+                                <rect key="frame" x="50" y="722" width="275" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywa-a6-Mvc">
+                                <rect key="frame" x="50" y="77" width="275" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="aG0-tu-i2P">
                                 <rect key="frame" x="20" y="257" width="75" height="90"/>
                                 <gestureRecognizers/>
@@ -91,11 +103,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="deY-Bk-i4t" secondAttribute="trailing" constant="20" id="8jU-12-8lX"/>
                             <constraint firstItem="wZH-aE-HvV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="9Xh-S3-kGY"/>
                             <constraint firstItem="LfB-4O-BFL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="Ak6-gA-Jan"/>
+                            <constraint firstItem="ywa-a6-Mvc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="B92-kf-37y"/>
                             <constraint firstItem="zDw-o4-3is" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-30" id="CTm-Ms-XS8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PoW-y8-r6T" secondAttribute="trailing" constant="20" id="EjE-ea-clj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UZG-3f-JC0" secondAttribute="trailing" constant="280" id="G39-rr-Aff"/>
                             <constraint firstItem="LfB-4O-BFL" firstAttribute="top" secondItem="aG0-tu-i2P" secondAttribute="bottom" id="GPv-QS-VuC"/>
                             <constraint firstItem="PoW-y8-r6T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="280" id="GaF-qa-kJU"/>
+                            <constraint firstItem="ywa-a6-Mvc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HIE-ii-qoR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ywa-a6-Mvc" secondAttribute="trailing" constant="50" id="Hgq-OQ-IWd"/>
+                            <constraint firstItem="D0C-OY-jSf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HpS-Ts-aYW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wZH-aE-HvV" secondAttribute="bottom" constant="450" id="L0y-sv-ORF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="biV-fq-KwZ" secondAttribute="bottom" constant="190" id="L2T-Ur-VrL"/>
                             <constraint firstItem="fSB-1l-pa7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="L7L-11-qGJ"/>
@@ -105,7 +121,9 @@
                             <constraint firstItem="biV-fq-KwZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="Pql-cm-zsu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zDw-o4-3is" secondAttribute="bottom" constant="190" id="SbP-Ai-1yQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6ew-nI-t3Y" secondAttribute="bottom" constant="300" id="T0M-zZ-Cj7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D0C-OY-jSf" secondAttribute="bottom" constant="20" id="XS6-s3-h3O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="biV-fq-KwZ" secondAttribute="trailing" constant="150" id="YeI-5v-Vv8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D0C-OY-jSf" secondAttribute="trailing" constant="50" id="aIj-CR-oXm"/>
                             <constraint firstItem="zDw-o4-3is" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="dFX-BO-nFg"/>
                             <constraint firstItem="wZH-aE-HvV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="fBM-HO-Xzk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="deY-Bk-i4t" secondAttribute="bottom" constant="155" id="fqV-lA-foF"/>
@@ -128,6 +146,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="circlePlayerText" destination="ywa-a6-Mvc" id="K2q-5m-euj"/>
                         <outlet property="number1" destination="aG0-tu-i2P" id="pFP-VC-L14"/>
                         <outlet property="number2" destination="wZH-aE-HvV" id="IBE-8O-nE2"/>
                         <outlet property="number3" destination="PoW-y8-r6T" id="QAz-aC-Cs6"/>
@@ -137,6 +156,7 @@
                         <outlet property="number7" destination="UZG-3f-JC0" id="bjS-2L-jeb"/>
                         <outlet property="number8" destination="biV-fq-KwZ" id="Ps8-9p-ovf"/>
                         <outlet property="number9" destination="deY-Bk-i4t" id="jLx-dH-zNz"/>
+                        <outlet property="xPlayerText" destination="D0C-OY-jSf" id="cUT-9q-BBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -186,7 +206,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-31" y="18"/>
+            <point key="canvasLocation" x="-31.199999999999999" y="17.733990147783253"/>
         </scene>
     </scenes>
     <resources>
