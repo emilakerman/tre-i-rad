@@ -151,7 +151,7 @@ class ViewController: UIViewController {
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
             && number9.isUserInteractionEnabled == false
-            && circlePlayerText.text == "(O) Your turn" {
+            && circlePlayerText.text != "(O) You win!" {
             
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Stalemate!", for: .normal)
@@ -166,7 +166,7 @@ class ViewController: UIViewController {
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
             && number9.isUserInteractionEnabled == false
-            && xPlayerText.text == "(X) Your turn" {
+            && xPlayerText.text != "(X) You win!" {
             
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Stalemate!", for: .normal)
