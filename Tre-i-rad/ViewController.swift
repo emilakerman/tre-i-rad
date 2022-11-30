@@ -18,14 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var number7: UIImageView!
     @IBOutlet weak var number8: UIImageView!
     @IBOutlet weak var number9: UIImageView!
-    
     @IBOutlet weak var circlePlayerText: UILabel!
     @IBOutlet weak var xPlayerText: UILabel!
-    
-    
     @IBOutlet weak var nextRoundButton: UIButton!
-
-    
     @IBOutlet weak var xwinCounter: UILabel!
     @IBOutlet weak var circleWinCounter: UILabel!
     
@@ -50,7 +45,7 @@ class ViewController: UIViewController {
         number9.image = UIImage(named:"")
 
         //start
-        xPlayerText.text = "\(playerXName), Your turn"
+        whoStarts()
         
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
@@ -153,25 +148,15 @@ class ViewController: UIViewController {
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
             && number9.isUserInteractionEnabled == false
-            && circlePlayerText.text != "\(playerOName) You win!" {
+            && circlePlayerText.text != "\(playerOName) You win!"
+            && xPlayerText.text != "\(playerXName) You lost!"
+            && xPlayerText.text != "\(playerXName) You win!"
+            && circlePlayerText.text != "\(playerOName) You lost!"{
             
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Stalemate!", for: .normal)
-        }
-        if
-            number1.isUserInteractionEnabled == false
-            && number2.isUserInteractionEnabled == false
-            && number3.isUserInteractionEnabled == false
-            && number4.isUserInteractionEnabled == false
-            && number5.isUserInteractionEnabled == false
-            && number6.isUserInteractionEnabled == false
-            && number7.isUserInteractionEnabled == false
-            && number8.isUserInteractionEnabled == false
-            && number9.isUserInteractionEnabled == false
-            && xPlayerText.text != "\(playerXName) You win!" {
-            
-            nextRoundButton.isHidden = false
-            nextRoundButton.setTitle("Stalemate!", for: .normal)
+            xPlayerText.text = ""
+            circlePlayerText.text = ""
         }
         //shows the next round button and locks the playing field until next round
         if xPlayerText.text == "\(playerXName) You win!" || circlePlayerText.text == "\(playerOName) You win!" {
@@ -353,5 +338,17 @@ class ViewController: UIViewController {
         number7.isUserInteractionEnabled = true
         number8.isUserInteractionEnabled = true
         number9.isUserInteractionEnabled = true
+        whoStarts()
+    }
+    func whoStarts() {
+        let numberR = Int.random(in: 1 ..< 3)
+        if numberR == 1 {
+            turnCounter = 1
+            circlePlayerText.text = "\(playerOName), Your turn"
+        }
+        if numberR == 2 {
+            turnCounter = 2
+            xPlayerText.text = "\(playerXName), Your turn"
+        }
     }
 }
