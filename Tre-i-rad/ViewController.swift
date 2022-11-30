@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     var winCounterCircle : Int = 0
     var winCounterX : Int = 0
     
+    var playerXName : String = ""
+    var playerOName : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         number9.image = UIImage(named:"")
 
         //start
-        xPlayerText.text = "(X) Your turn"
+        xPlayerText.text = "\(playerXName), Your turn"
         
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
@@ -58,83 +60,83 @@ class ViewController: UIViewController {
     //function that checks for a win and gives points
     func checkWin() {
         if number1.image == UIImage(named:"black_circle") && number2.image == UIImage(named:"black_circle") && number3.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
-        if number1.image == UIImage(named:"black_circle") && number4.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+        if number1.image == UIImage(named:"black_circle") && number4.image == UIImage(named:"black_circle") && number7.image == UIImage(named:"black_circle") {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number1.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number2.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number3.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number4.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number7.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number3.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number7.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "(O) You win!"
-            xPlayerText.text = "(X) You lost!"
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
             winCounterCircle += 1
         }
         if number1.image == UIImage(named:"black_x") && number2.image == UIImage(named:"black_x") && number3.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
-        if number1.image == UIImage(named:"black_x") && number4.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+        if number1.image == UIImage(named:"black_x") && number4.image == UIImage(named:"black_x") && number7.image == UIImage(named:"black_x") {
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number1.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number2.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number3.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number4.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number7.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         if number3.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number7.image == UIImage(named:"black_x") {
-            xPlayerText.text = "(X) You win!"
-            circlePlayerText.text = "(O) You lost!"
+            xPlayerText.text = "\(playerXName) You win!"
+            circlePlayerText.text = "\(playerOName) You lost!"
             winCounterX += 1
         }
         xwinCounter.text = String(winCounterX)
@@ -151,7 +153,7 @@ class ViewController: UIViewController {
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
             && number9.isUserInteractionEnabled == false
-            && circlePlayerText.text != "(O) You win!" {
+            && circlePlayerText.text != "\(playerOName) You win!" {
             
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Stalemate!", for: .normal)
@@ -166,13 +168,13 @@ class ViewController: UIViewController {
             && number7.isUserInteractionEnabled == false
             && number8.isUserInteractionEnabled == false
             && number9.isUserInteractionEnabled == false
-            && xPlayerText.text != "(X) You win!" {
+            && xPlayerText.text != "\(playerXName) You win!" {
             
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Stalemate!", for: .normal)
         }
         //shows the next round button and locks the playing field until next round
-        if xPlayerText.text == "(X) You win!" || circlePlayerText.text == "(O) You win!" {
+        if xPlayerText.text == "\(playerXName) You win!" || circlePlayerText.text == "\(playerOName) You win!" {
             nextRoundButton.isHidden = false
             number1.isUserInteractionEnabled = false
             number2.isUserInteractionEnabled = false
@@ -191,13 +193,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number1.image = UIImage(named:"black_circle")
             number1.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number1.image = UIImage(named:"black_x")
             number1.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -207,13 +209,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number2.image = UIImage(named:"black_circle")
             number2.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number2.image = UIImage(named:"black_x")
             number2.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -223,13 +225,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number3.image = UIImage(named:"black_circle")
             number3.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number3.image = UIImage(named:"black_x")
             number3.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -239,13 +241,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number4.image = UIImage(named:"black_circle")
             number4.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number4.image = UIImage(named:"black_x")
             number4.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -255,13 +257,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number5.image = UIImage(named:"black_circle")
             number5.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number5.image = UIImage(named:"black_x")
             number5.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -271,13 +273,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number6.image = UIImage(named:"black_circle")
             number6.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number6.image = UIImage(named:"black_x")
             number6.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -287,13 +289,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number7.image = UIImage(named:"black_circle")
             number7.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number7.image = UIImage(named:"black_x")
             number7.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -303,13 +305,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number8.image = UIImage(named:"black_circle")
             number8.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number8.image = UIImage(named:"black_x")
             number8.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
@@ -319,13 +321,13 @@ class ViewController: UIViewController {
         if turnCounter % 2 == 0 {
             number9.image = UIImage(named:"black_circle")
             number9.isUserInteractionEnabled = false
-            xPlayerText.text = "(X) Your turn"
+            xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
             checkWin()
         } else {
             number9.image = UIImage(named:"black_x")
             number9.isUserInteractionEnabled = false
-            circlePlayerText.text = "(O) Your turn"
+            circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
             checkWin()
         }
