@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     var playerXName : String = ""
     var playerOName : String = ""
     
+    let RNG = RandomNumberGenerator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         number8.image = UIImage(named:"")
         number9.image = UIImage(named:"")
 
-        //start
+        //start function that randomizes the starting player
         whoStarts()
         
         xwinCounter.text = String(winCounterX)
@@ -137,27 +139,7 @@ class ViewController: UIViewController {
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
         
-        //for stalemates
-        if
-            number1.isUserInteractionEnabled == false
-            && number2.isUserInteractionEnabled == false
-            && number3.isUserInteractionEnabled == false
-            && number4.isUserInteractionEnabled == false
-            && number5.isUserInteractionEnabled == false
-            && number6.isUserInteractionEnabled == false
-            && number7.isUserInteractionEnabled == false
-            && number8.isUserInteractionEnabled == false
-            && number9.isUserInteractionEnabled == false
-            && circlePlayerText.text != "\(playerOName) You win!"
-            && xPlayerText.text != "\(playerXName) You lost!"
-            && xPlayerText.text != "\(playerXName) You win!"
-            && circlePlayerText.text != "\(playerOName) You lost!"{
-            
-            nextRoundButton.isHidden = false
-            nextRoundButton.setTitle("Stalemate!", for: .normal)
-            xPlayerText.text = ""
-            circlePlayerText.text = ""
-        }
+        
         //shows the next round button and locks the playing field until next round
         if xPlayerText.text == "\(playerXName) You win!" || circlePlayerText.text == "\(playerOName) You win!" {
             nextRoundButton.isHidden = false
@@ -170,6 +152,28 @@ class ViewController: UIViewController {
             number7.isUserInteractionEnabled = false
             number8.isUserInteractionEnabled = false
             number9.isUserInteractionEnabled = false
+        }
+        
+        //for stalemates --- not 100%, sometimes this IF statement is true even though somebody won
+        else if
+            number1.isUserInteractionEnabled == false
+            && number2.isUserInteractionEnabled == false
+            && number3.isUserInteractionEnabled == false
+            && number4.isUserInteractionEnabled == false
+            && number5.isUserInteractionEnabled == false
+            && number6.isUserInteractionEnabled == false
+            && number7.isUserInteractionEnabled == false
+            && number8.isUserInteractionEnabled == false
+            && number9.isUserInteractionEnabled == false
+            && circlePlayerText.text != "\(playerOName) You win!"
+            && xPlayerText.text != "\(playerXName) You lost!"
+            && xPlayerText.text != "\(playerXName) You win!"
+            && circlePlayerText.text != "\(playerOName) You lost!" {
+            
+            nextRoundButton.isHidden = false
+            nextRoundButton.setTitle("Stalemate!", for: .normal)
+            xPlayerText.text = ""
+            circlePlayerText.text = ""
         }
     }
     //separate gesture functions for all the available moves
@@ -340,13 +344,14 @@ class ViewController: UIViewController {
         number9.isUserInteractionEnabled = true
         whoStarts()
     }
+    //the function that randomizes the starting player, with MVC(?) class
     func whoStarts() {
-        let numberR = Int.random(in: 1 ..< 3)
-        if numberR == 1 {
+        let result = RNG.randomPlayer()
+        if result == 1 {
             turnCounter = 1
             circlePlayerText.text = "\(playerOName), Your turn"
         }
-        if numberR == 2 {
+        if result == 2 {
             turnCounter = 2
             xPlayerText.text = "\(playerXName), Your turn"
         }

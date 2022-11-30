@@ -17,6 +17,7 @@
 		20FA715829361238002EFBA0 /* Tre_i_radUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA715729361238002EFBA0 /* Tre_i_radUITests.swift */; };
 		20FA715A29361238002EFBA0 /* Tre_i_radUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA715929361238002EFBA0 /* Tre_i_radUITestsLaunchTests.swift */; };
 		20FA716729366204002EFBA0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA716629366204002EFBA0 /* FirstViewController.swift */; };
+		20FA71692937BD92002EFBA0 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA71682937BD92002EFBA0 /* RandomNumberGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		20FA715729361238002EFBA0 /* Tre_i_radUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tre_i_radUITests.swift; sourceTree = "<group>"; };
 		20FA715929361238002EFBA0 /* Tre_i_radUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tre_i_radUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20FA716629366204002EFBA0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		20FA71682937BD92002EFBA0 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				20FA714129361237002EFBA0 /* LaunchScreen.storyboard */,
 				20FA714429361237002EFBA0 /* Info.plist */,
 				20FA716629366204002EFBA0 /* FirstViewController.swift */,
+				20FA71682937BD92002EFBA0 /* RandomNumberGenerator.swift */,
 			);
 			path = "Tre-i-rad";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				20FA713B29361234002EFBA0 /* ViewController.swift in Sources */,
 				20FA713729361234002EFBA0 /* AppDelegate.swift in Sources */,
+				20FA71692937BD92002EFBA0 /* RandomNumberGenerator.swift in Sources */,
 				20FA713929361234002EFBA0 /* SceneDelegate.swift in Sources */,
 				20FA716729366204002EFBA0 /* FirstViewController.swift in Sources */,
 			);
