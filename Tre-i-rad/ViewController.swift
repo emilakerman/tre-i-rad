@@ -51,8 +51,6 @@ class ViewController: UIViewController {
         
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
-        
-        
     }
     //function that checks for a win and gives points
     func checkWin() {
@@ -143,6 +141,7 @@ class ViewController: UIViewController {
         //shows the next round button and locks the playing field until next round
         if xPlayerText.text == "\(playerXName) You win!" || circlePlayerText.text == "\(playerOName) You win!" {
             nextRoundButton.isHidden = false
+            nextRoundButton.setTitle("Next round!", for: .normal) //maybe this fixed the stalemate issue?
             number1.isUserInteractionEnabled = false
             number2.isUserInteractionEnabled = false
             number3.isUserInteractionEnabled = false
@@ -152,10 +151,7 @@ class ViewController: UIViewController {
             number7.isUserInteractionEnabled = false
             number8.isUserInteractionEnabled = false
             number9.isUserInteractionEnabled = false
-        }
-        
-        //for stalemates --- not 100%, sometimes this IF statement is true even though somebody won
-        else if
+        } else if  //for stalemates --- does it work now?
             number1.isUserInteractionEnabled == false
             && number2.isUserInteractionEnabled == false
             && number3.isUserInteractionEnabled == false
