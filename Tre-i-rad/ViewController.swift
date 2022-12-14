@@ -31,8 +31,11 @@ class ViewController: UIViewController {
     var playerXName : String = ""
     var playerOName : String = ""
     
-    let RNG = PlayingField()
-    let plusOne = PlayingField()
+    let playingField = PlayingField()
+    
+    let blackC = "o"
+    let blackX = "x"
+    var listOfImages = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,90 +43,106 @@ class ViewController: UIViewController {
         //start function that randomizes the starting player and clears playing field
         whoStarts()
         
+        newList()
+        
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
+        
+    }
+    //initiates a new list at start and restart
+    func newList() {
+        listOfImages.removeAll()
+        listOfImages.insert(" ", at: 0)
+        listOfImages.insert(" ", at: 1)
+        listOfImages.insert(" ", at: 2)
+        listOfImages.insert(" ", at: 3)
+        listOfImages.insert(" ", at: 4)
+        listOfImages.insert(" ", at: 5)
+        listOfImages.insert(" ", at: 6)
+        listOfImages.insert(" ", at: 7)
+        listOfImages.insert(" ", at: 8)
     }
     //function that checks for a win and gives points
     func checkWin() {
-        if number1.image == UIImage(named:"black_circle") && number2.image == UIImage(named:"black_circle") && number3.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number1.image == UIImage(named:"black_circle") && number4.image == UIImage(named:"black_circle") && number7.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number1.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number2.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number3.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number4.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number6.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number7.image == UIImage(named:"black_circle") && number8.image == UIImage(named:"black_circle") && number9.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number3.image == UIImage(named:"black_circle") && number5.image == UIImage(named:"black_circle") && number7.image == UIImage(named:"black_circle") {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if number1.image == UIImage(named:"black_x") && number2.image == UIImage(named:"black_x") && number3.image == UIImage(named:"black_x") {
+        if listOfImages[0] == blackX && listOfImages[1] == blackX && listOfImages[2] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number1.image == UIImage(named:"black_x") && number4.image == UIImage(named:"black_x") && number7.image == UIImage(named:"black_x") {
+        if listOfImages[3] == blackX && listOfImages[4] == blackX && listOfImages[5] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number1.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
+        if listOfImages[6] == blackX && listOfImages[7] == blackX && listOfImages[8] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number2.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") {
+        if listOfImages[0] == blackX && listOfImages[3] == blackX && listOfImages[6] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number3.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
+        if listOfImages[1] == blackX && listOfImages[4] == blackX && listOfImages[7] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number4.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number6.image == UIImage(named:"black_x") {
+        if listOfImages[2] == blackX && listOfImages[5] == blackX && listOfImages[8] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number7.image == UIImage(named:"black_x") && number8.image == UIImage(named:"black_x") && number9.image == UIImage(named:"black_x") {
+        if listOfImages[0] == blackX && listOfImages[4] == blackX && listOfImages[8] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
         }
-        if number3.image == UIImage(named:"black_x") && number5.image == UIImage(named:"black_x") && number7.image == UIImage(named:"black_x") {
+        if listOfImages[2] == blackX && listOfImages[4] == blackX && listOfImages[6] == blackX {
             xPlayerText.text = "\(playerXName) You win!"
             circlePlayerText.text = "\(playerOName) You lost!"
             addToWinCounterX()
+        }
+        if listOfImages[0] == blackC && listOfImages[1] == blackC && listOfImages[2] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[3] == blackC && listOfImages[4] == blackC && listOfImages[5] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[6] == blackC && listOfImages[7] == blackC && listOfImages[8] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[0] == blackC && listOfImages[3] == blackC && listOfImages[6] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[1] == blackC && listOfImages[4] == blackC && listOfImages[7] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[2] == blackC && listOfImages[5] == blackC && listOfImages[8] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[0] == blackC && listOfImages[4] == blackC && listOfImages[8] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
+        }
+        if listOfImages[2] == blackC && listOfImages[4] == blackC && listOfImages[6] == blackC {
+            circlePlayerText.text = "\(playerOName) You win!"
+            xPlayerText.text = "\(playerXName) You lost!"
+            addToWinCounterO()
         }
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
@@ -134,7 +153,7 @@ class ViewController: UIViewController {
             nextRoundButton.isHidden = false
             nextRoundButton.setTitle("Next round!", for: .normal)
             disablePlayingField()
-        } else if  //for stalemates --- does it work now?
+        } else if  //for stalemates
             number1.isUserInteractionEnabled == false
             && number2.isUserInteractionEnabled == false
             && number3.isUserInteractionEnabled == false
@@ -156,22 +175,25 @@ class ViewController: UIViewController {
         }
     }
     func addToTurnCounter() {
-        turnCounter += plusOne.generalCounter()
+        turnCounter += playingField.generalCounter()
     }
     func addToWinCounterO() {
-        winCounterCircle += plusOne.generalCounter()
+        winCounterCircle += playingField.generalCounter()
     }
     func addToWinCounterX() {
-        winCounterX += plusOne.generalCounter()
+        winCounterX += playingField.generalCounter()
     }
     //separate gesture functions for all the available moves
     @IBAction func pressT(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 0)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 0)
             number1.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 0)
             number1.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -181,11 +203,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number2(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 1)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 1)
             number2.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 1)
             number2.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -195,11 +220,14 @@ class ViewController: UIViewController {
     }
     @IBAction func press3(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 2)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 2)
             number3.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 2)
             number3.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -209,11 +237,14 @@ class ViewController: UIViewController {
     }
     @IBAction func press4(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 3)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 3)
             number4.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 3)
             number4.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -223,11 +254,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number5(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 4)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 4)
             number5.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 4)
             number5.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -237,11 +271,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number6(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 5)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 5)
             number6.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 5)
             number6.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -251,11 +288,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number7(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 6)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 6)
             number7.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 6)
             number7.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -265,11 +305,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number8(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 7)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 7)
             number8.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 7)
             number8.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -279,11 +322,14 @@ class ViewController: UIViewController {
     }
     @IBAction func number9(_ sender: UITapGestureRecognizer) {
         addToTurnCounter()
+        listOfImages.remove(at: 8)
         if turnCounter % 2 == 0 {
+            listOfImages.insert(blackC, at: 8)
             number9.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
+            listOfImages.insert(blackX, at: 8)
             number9.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -297,7 +343,10 @@ class ViewController: UIViewController {
     }
     //the function that randomizes the starting player and clears the playing field
     func whoStarts() {
-        let result = RNG.randomPlayer()
+        
+        newList()
+        
+        let result = playingField.randomPlayer()
         if result == 1 {
             turnCounter = 1
             circlePlayerText.text = "\(playerOName), Your turn"
@@ -337,5 +386,14 @@ class ViewController: UIViewController {
         number7.isUserInteractionEnabled = false
         number8.isUserInteractionEnabled = false
         number9.isUserInteractionEnabled = false
-    }
+    } /*
+    func checkCurrentPlayer() {
+        if checkPlayer.changePlayer() == "X, your turn" {
+            xPlayerText.text = "X, your turn"
+            circlePlayerText.text = "-"
+        } else if checkPlayer.changePlayer() == "O, your turn" {
+            xPlayerText.text = "O, your turn"
+            circlePlayerText.text = "-"
+        }
+    } */
 }
