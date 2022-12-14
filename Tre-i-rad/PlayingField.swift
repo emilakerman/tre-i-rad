@@ -12,7 +12,7 @@ class PlayingField {
     //let activePlayer = Int.random(in: 1 ..< 3)
     
     ///
-    
+    /*
     var listImages = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     
     func addImageO(at place: Int) -> String {
@@ -24,7 +24,7 @@ class PlayingField {
         return listImages[place]
     }
     
-
+*/
     
     ///
     

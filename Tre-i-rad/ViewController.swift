@@ -43,14 +43,13 @@ class ViewController: UIViewController {
         //start function that randomizes the starting player and clears playing field
         whoStarts()
         
-        newList()
+        newEmptyList()
         
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
-        
     }
     //initiates a new list at start and restart
-    func newList() {
+    func newEmptyList() {
         listOfImages.removeAll()
         listOfImages.insert(" ", at: 0)
         listOfImages.insert(" ", at: 1)
@@ -64,89 +63,25 @@ class ViewController: UIViewController {
     }
     //function that checks for a win and gives points
     func checkWin() {
-        if listOfImages[0] == blackX && listOfImages[1] == blackX && listOfImages[2] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[3] == blackX && listOfImages[4] == blackX && listOfImages[5] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[6] == blackX && listOfImages[7] == blackX && listOfImages[8] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[0] == blackX && listOfImages[3] == blackX && listOfImages[6] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[1] == blackX && listOfImages[4] == blackX && listOfImages[7] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[2] == blackX && listOfImages[5] == blackX && listOfImages[8] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[0] == blackX && listOfImages[4] == blackX && listOfImages[8] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[2] == blackX && listOfImages[4] == blackX && listOfImages[6] == blackX {
-            xPlayerText.text = "\(playerXName) You win!"
-            circlePlayerText.text = "\(playerOName) You lost!"
-            addToWinCounterX()
-        }
-        if listOfImages[0] == blackC && listOfImages[1] == blackC && listOfImages[2] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[3] == blackC && listOfImages[4] == blackC && listOfImages[5] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[6] == blackC && listOfImages[7] == blackC && listOfImages[8] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[0] == blackC && listOfImages[3] == blackC && listOfImages[6] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[1] == blackC && listOfImages[4] == blackC && listOfImages[7] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[2] == blackC && listOfImages[5] == blackC && listOfImages[8] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[0] == blackC && listOfImages[4] == blackC && listOfImages[8] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
-        if listOfImages[2] == blackC && listOfImages[4] == blackC && listOfImages[6] == blackC {
-            circlePlayerText.text = "\(playerOName) You win!"
-            xPlayerText.text = "\(playerXName) You lost!"
-            addToWinCounterO()
-        }
+        if listOfImages[0] == blackX && listOfImages[1] == blackX && listOfImages[2] == blackX { xWinnerSituation() }
+        if listOfImages[3] == blackX && listOfImages[4] == blackX && listOfImages[5] == blackX { xWinnerSituation() }
+        if listOfImages[6] == blackX && listOfImages[7] == blackX && listOfImages[8] == blackX { xWinnerSituation() }
+        if listOfImages[0] == blackX && listOfImages[3] == blackX && listOfImages[6] == blackX { xWinnerSituation() }
+        if listOfImages[1] == blackX && listOfImages[4] == blackX && listOfImages[7] == blackX { xWinnerSituation() }
+        if listOfImages[2] == blackX && listOfImages[5] == blackX && listOfImages[8] == blackX { xWinnerSituation() }
+        if listOfImages[0] == blackX && listOfImages[4] == blackX && listOfImages[8] == blackX { xWinnerSituation() }
+        if listOfImages[2] == blackX && listOfImages[4] == blackX && listOfImages[6] == blackX { xWinnerSituation() }
+        if listOfImages[0] == blackC && listOfImages[1] == blackC && listOfImages[2] == blackC { circleWinnerSituation() }
+        if listOfImages[3] == blackC && listOfImages[4] == blackC && listOfImages[5] == blackC { circleWinnerSituation() }
+        if listOfImages[6] == blackC && listOfImages[7] == blackC && listOfImages[8] == blackC { circleWinnerSituation() }
+        if listOfImages[0] == blackC && listOfImages[3] == blackC && listOfImages[6] == blackC { circleWinnerSituation() }
+        if listOfImages[1] == blackC && listOfImages[4] == blackC && listOfImages[7] == blackC { circleWinnerSituation() }
+        if listOfImages[2] == blackC && listOfImages[5] == blackC && listOfImages[8] == blackC { circleWinnerSituation() }
+        if listOfImages[0] == blackC && listOfImages[4] == blackC && listOfImages[8] == blackC { circleWinnerSituation() }
+        if listOfImages[2] == blackC && listOfImages[4] == blackC && listOfImages[6] == blackC { circleWinnerSituation() }
+        
         xwinCounter.text = String(winCounterX)
         circleWinCounter.text = String(winCounterCircle)
-        
         
         //shows the next round button and disables the playing field until next round
         if xPlayerText.text == "\(playerXName) You win!" || circlePlayerText.text == "\(playerOName) You win!" {
@@ -173,6 +108,18 @@ class ViewController: UIViewController {
             xPlayerText.text = ""
             circlePlayerText.text = ""
         }
+    }
+    //displays text when you win and adds to wincounter (for circle)
+    func circleWinnerSituation() {
+        circlePlayerText.text = "\(playerOName) You win!"
+        xPlayerText.text = "\(playerXName) You lost!"
+        addToWinCounterO()
+    }
+    //displays text when you win and adds to wincounter (for X)
+    func xWinnerSituation() {
+        xPlayerText.text = "\(playerXName) You win!"
+        circlePlayerText.text = "\(playerOName) You lost!"
+        addToWinCounterX()
     }
     func addToTurnCounter() {
         turnCounter += playingField.generalCounter()
@@ -344,9 +291,10 @@ class ViewController: UIViewController {
     //the function that randomizes the starting player and clears the playing field
     func whoStarts() {
         
-        newList()
+        newEmptyList()
         
         let result = playingField.randomPlayer()
+        
         if result == 1 {
             turnCounter = 1
             circlePlayerText.text = "\(playerOName), Your turn"

@@ -19,55 +19,55 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="zDw-o4-3is">
                                 <rect key="frame" x="-30" y="237" width="435" height="328"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="LfB-4O-BFL">
+                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="LfB-4O-BFL">
                                 <rect key="frame" x="20" y="347" width="75" height="108"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="1dg-WS-fKB" appends="YES" id="OqZ-2t-aVd"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="UZG-3f-JC0">
+                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="UZG-3f-JC0">
                                 <rect key="frame" x="20" y="465" width="75" height="90"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="kFF-3b-qhi" appends="YES" id="5fl-nf-PRK"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="6ew-nI-t3Y">
+                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="6ew-nI-t3Y">
                                 <rect key="frame" x="280" y="347" width="75" height="108"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DTe-mc-yr4" appends="YES" id="NZD-SP-C6i"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="deY-Bk-i4t">
+                            <imageView clipsSubviews="YES" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="deY-Bk-i4t">
                                 <rect key="frame" x="280" y="477" width="75" height="123"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="T1b-hN-fW3" appends="YES" id="WIm-L3-CS3"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="PoW-y8-r6T">
+                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="PoW-y8-r6T">
                                 <rect key="frame" x="280" y="252" width="75" height="100"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="HaE-SH-f94" appends="YES" id="WY8-sb-tQf"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="fSB-1l-pa7">
+                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="fSB-1l-pa7">
                                 <rect key="frame" x="150" y="347" width="75" height="108"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="8cF-nC-STv" appends="YES" id="xnY-Yz-7aF"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="biV-fq-KwZ">
+                            <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="biV-fq-KwZ">
                                 <rect key="frame" x="150" y="455" width="75" height="110"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DM5-j6-wul" appends="YES" id="S2c-LA-EVC"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="wZH-aE-HvV">
+                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="wZH-aE-HvV">
                                 <rect key="frame" x="150" y="247" width="75" height="58"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -86,7 +86,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="aG0-tu-i2P">
+                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_circle" translatesAutoresizingMaskIntoConstraints="NO" id="aG0-tu-i2P">
                                 <rect key="frame" x="20" y="257" width="75" height="90"/>
                                 <gestureRecognizers/>
                                 <connections>
