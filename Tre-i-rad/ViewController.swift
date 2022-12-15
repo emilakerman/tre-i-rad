@@ -33,10 +33,6 @@ class ViewController: UIViewController {
     
     let playingField = PlayingField()
     
-    let blackC = "o"
-    let blackX = "x"
-    var listOfImages = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -49,10 +45,10 @@ class ViewController: UIViewController {
     //function that checks for a win and gives points
     func checkWin() {
         let winResult = playingField.checkWinCondition()
-        if winResult == "x" {
+        if winResult == playingField.blackX {
             xWinnerSituation()
         }
-        if winResult == "o" {
+        if winResult == playingField.blackC {
             circleWinnerSituation()
         }
         
@@ -97,6 +93,7 @@ class ViewController: UIViewController {
         circlePlayerText.text = "\(playerOName) You lost!"
         winCounterX += playingField.generalCounter()
     }
+    //adds to the turncounter (the variable that checks current player)
     func addToTurnCounter() {
         turnCounter += playingField.generalCounter()
     }
@@ -105,12 +102,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 0)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 0)
+            playingField.grid.insert(playingField.blackC, at: 0)
             number1.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 0)
+            playingField.grid.insert(playingField.blackX, at: 0)
             number1.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -122,12 +119,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 1)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 1)
+            playingField.grid.insert(playingField.blackC, at: 1)
             number2.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 1)
+            playingField.grid.insert(playingField.blackX, at: 1)
             number2.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -139,12 +136,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 2)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 2)
+            playingField.grid.insert(playingField.blackC, at: 2)
             number3.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 2)
+            playingField.grid.insert(playingField.blackX, at: 2)
             number3.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -156,12 +153,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 3)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 3)
+            playingField.grid.insert(playingField.blackC, at: 3)
             number4.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 3)
+            playingField.grid.insert(playingField.blackX, at: 3)
             number4.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -173,12 +170,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 4)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 4)
+            playingField.grid.insert(playingField.blackC, at: 4)
             number5.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 4)
+            playingField.grid.insert(playingField.blackX, at: 4)
             number5.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -190,12 +187,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 5)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 5)
+            playingField.grid.insert(playingField.blackC, at: 5)
             number6.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 5)
+            playingField.grid.insert(playingField.blackX, at: 5)
             number6.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -207,12 +204,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 6)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 6)
+            playingField.grid.insert(playingField.blackC, at: 6)
             number7.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 6)
+            playingField.grid.insert(playingField.blackX, at: 6)
             number7.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -224,12 +221,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 7)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 7)
+            playingField.grid.insert(playingField.blackC, at: 7)
             number8.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 7)
+            playingField.grid.insert(playingField.blackX, at: 7)
             number8.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""
@@ -241,12 +238,12 @@ class ViewController: UIViewController {
         addToTurnCounter()
         playingField.grid.remove(at: 8)
         if turnCounter % 2 == 0 {
-            playingField.grid.insert(blackC, at: 8)
+            playingField.grid.insert(playingField.blackC, at: 8)
             number9.image = UIImage(named:"black_circle")
             xPlayerText.text = "\(playerXName), Your turn"
             circlePlayerText.text = ""
         } else {
-            playingField.grid.insert(blackX, at: 8)
+            playingField.grid.insert(playingField.blackX, at: 8)
             number9.image = UIImage(named:"black_x")
             circlePlayerText.text = "\(playerOName), Your turn"
             xPlayerText.text = ""

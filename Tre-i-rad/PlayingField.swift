@@ -10,7 +10,10 @@ import Foundation
 class PlayingField {
     
     var grid = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    let blackX = "x"
+    let blackC = "o"
     
+    //this initiates the empty list at the start of the game
     init() {
         grid.removeAll()
         grid.insert(" ", at: 0)
@@ -23,7 +26,7 @@ class PlayingField {
         grid.insert(" ", at: 7)
         grid.insert(" ", at: 8)
     }
-    //this get initiated after each round to clear the grid/board
+    //this gets initiated after each round to clear the grid/board
     func initGrid() {
         grid.removeAll()
         grid.insert(" ", at: 0)
@@ -38,8 +41,6 @@ class PlayingField {
     }
     //this function is called after each move to check for a win
     func checkWinCondition() -> String {
-        let blackX = "x"
-        let blackC = "o"
         if grid[0] == blackX && grid[1] == blackX && grid[2] == blackX { return blackX }
         if grid[3] == blackX && grid[4] == blackX && grid[5] == blackX { return blackX }
         if grid[6] == blackX && grid[7] == blackX && grid[8] == blackX { return blackX }
