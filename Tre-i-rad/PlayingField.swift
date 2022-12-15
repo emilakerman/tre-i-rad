@@ -58,23 +58,8 @@ class PlayingField {
         if grid[0] == blackC && grid[4] == blackC && grid[8] == blackC { return blackC }
         if grid[2] == blackC && grid[4] == blackC && grid[6] == blackC { return blackC }
         
-        return "error"
+        return "this never gets returned"
     }
-    
-    /*
-    func addImageO(at place: Int) -> String {
-        listImages[place] = "o"
-        return listImages[place]
-    }
-    func addImageX(at place: Int) -> String {
-        listImages[place] = "x"
-        return listImages[place]
-    }
-    
-*/
-    
-    ///
-        
     func generalCounter() -> Int {
         var total = 0
         total += 1
@@ -83,8 +68,9 @@ class PlayingField {
     func randomPlayer() -> Int {
         let numberR = Int.random(in: 1 ..< 3)
         return numberR
-    }
-    /*
+    }/*
+    //not used yet
+    var activePlayer : Int = Int.random(in: 1 ..< 3)
     func changePlayer() -> String {
         if activePlayer % 2 == 0 {
             return "X, your turn"
@@ -92,6 +78,5 @@ class PlayingField {
             return "O, your turn"
         }
         return "problem changing player"
-    }
-     */
+    }*/
 }
