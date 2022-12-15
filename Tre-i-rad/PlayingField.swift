@@ -40,22 +40,22 @@ class PlayingField {
     func checkWinCondition() -> String {
         let blackX = "x"
         let blackC = "o"
-        if grid[0] == blackX && grid[1] == blackX && grid[2] == blackX { return "x" }
-        if grid[3] == blackX && grid[4] == blackX && grid[5] == blackX { return "x" }
-        if grid[6] == blackX && grid[7] == blackX && grid[8] == blackX { return "x" }
-        if grid[0] == blackX && grid[3] == blackX && grid[6] == blackX { return "x" }
-        if grid[1] == blackX && grid[4] == blackX && grid[7] == blackX { return "x" }
-        if grid[2] == blackX && grid[5] == blackX && grid[8] == blackX { return "x" }
-        if grid[0] == blackX && grid[4] == blackX && grid[8] == blackX { return "x" }
-        if grid[2] == blackX && grid[4] == blackX && grid[6] == blackX { return "x" }
-        if grid[0] == blackC && grid[1] == blackC && grid[2] == blackC { return "o" }
-        if grid[3] == blackC && grid[4] == blackC && grid[5] == blackC { return "o" }
-        if grid[6] == blackC && grid[7] == blackC && grid[8] == blackC { return "o" }
-        if grid[0] == blackC && grid[3] == blackC && grid[6] == blackC { return "o" }
-        if grid[1] == blackC && grid[4] == blackC && grid[7] == blackC { return "o" }
-        if grid[2] == blackC && grid[5] == blackC && grid[8] == blackC { return "o" }
-        if grid[0] == blackC && grid[4] == blackC && grid[8] == blackC { return "o" }
-        if grid[2] == blackC && grid[4] == blackC && grid[6] == blackC { return "o" }
+        if grid[0] == blackX && grid[1] == blackX && grid[2] == blackX { return blackX }
+        if grid[3] == blackX && grid[4] == blackX && grid[5] == blackX { return blackX }
+        if grid[6] == blackX && grid[7] == blackX && grid[8] == blackX { return blackX }
+        if grid[0] == blackX && grid[3] == blackX && grid[6] == blackX { return blackX }
+        if grid[1] == blackX && grid[4] == blackX && grid[7] == blackX { return blackX }
+        if grid[2] == blackX && grid[5] == blackX && grid[8] == blackX { return blackX }
+        if grid[0] == blackX && grid[4] == blackX && grid[8] == blackX { return blackX }
+        if grid[2] == blackX && grid[4] == blackX && grid[6] == blackX { return blackX }
+        if grid[0] == blackC && grid[1] == blackC && grid[2] == blackC { return blackC }
+        if grid[3] == blackC && grid[4] == blackC && grid[5] == blackC { return blackC }
+        if grid[6] == blackC && grid[7] == blackC && grid[8] == blackC { return blackC }
+        if grid[0] == blackC && grid[3] == blackC && grid[6] == blackC { return blackC }
+        if grid[1] == blackC && grid[4] == blackC && grid[7] == blackC { return blackC }
+        if grid[2] == blackC && grid[5] == blackC && grid[8] == blackC { return blackC }
+        if grid[0] == blackC && grid[4] == blackC && grid[8] == blackC { return blackC }
+        if grid[2] == blackC && grid[4] == blackC && grid[6] == blackC { return blackC }
         
         return "error"
     }
