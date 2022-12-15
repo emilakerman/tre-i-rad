@@ -113,22 +113,16 @@ class ViewController: UIViewController {
     func circleWinnerSituation() {
         circlePlayerText.text = "\(playerOName) You win!"
         xPlayerText.text = "\(playerXName) You lost!"
-        addToWinCounterO()
+        winCounterCircle += playingField.generalCounter()
     }
     //displays text when you win and adds to wincounter (for X)
     func xWinnerSituation() {
         xPlayerText.text = "\(playerXName) You win!"
         circlePlayerText.text = "\(playerOName) You lost!"
-        addToWinCounterX()
+        winCounterX += playingField.generalCounter()
     }
     func addToTurnCounter() {
         turnCounter += playingField.generalCounter()
-    }
-    func addToWinCounterO() {
-        winCounterCircle += playingField.generalCounter()
-    }
-    func addToWinCounterX() {
-        winCounterX += playingField.generalCounter()
     }
     //separate gesture functions for all the available moves
     @IBAction func pressT(_ sender: UITapGestureRecognizer) {
